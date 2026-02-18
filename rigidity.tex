@@ -354,6 +354,8 @@ In particular, for $\star$-coprime $m=p_1^{\star k_1}\star\cdots\star p_r^{\star
 
 The consequence of Lemma~\ref{lem:norm-compat} is that the only freedom in $\star$ is how iterated powers of a single $\star$-irreducible are defined: once the $\star$-power sequences $\{p^{\star k}\}_{k\ge0}$ are specified for each $p\in P$, the operation on arbitrary elements is determined by unique factorization and \eqref{eq:norm-compat}.
 
+Conversely, norm compatibility implies the Euler product: if $m \star n = m \cdot n$ for $\star$-coprime inputs, then the standard expansion of $\prod_{p \in P} F_p(s)$ over finitely supported selections reproduces $\sum a(n) n^{-s}$ termwise, since each $\star$-factorization $n = p_1^{\star k_1} \star \cdots \star p_r^{\star k_r}$ contributes $(p_1^{\star k_1} \cdots p_r^{\star k_r})^{-s} = n^{-s}$ by norm compatibility. Thus (E1) and \eqref{eq:norm-compat} are equivalent characterizations of the same structural constraint; the Lean formalization axiomatizes (E1) in its norm-compatibility form (see Section~\ref{sec:concluding}).
+
 \begin{example}[Twisted multiplication]\label{ex:twisted}
 Let $\phi:\N\to\N$ swap $2\leftrightarrow3$ while fixing all other integers, and define
 $n\star m=\phi^{-1}(\phi(n)\cdot\phi(m))$. Then:
