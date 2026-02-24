@@ -4,7 +4,7 @@
 [![Mathlib](https://img.shields.io/badge/Mathlib-v4.24.0-blue)](https://github.com/leanprover-community/mathlib4)
 [![Sorry count](https://img.shields.io/badge/sorry_count-0-brightgreen)]()
 
-This repository contains the paper and a Lean 4 formalization of the main theorem from:
+Lean 4 formalization of the main theorem from:
 
 > **Characterizing Arithmetic Through Dirichlet Series with Boolean Coefficients**
 > Eduardo Zambrano, California Polytechnic State University
@@ -27,19 +27,15 @@ The Euler product (E1) is the standard analytic requirement that $Z(s)$ respect 
 
 ```
 .
-├── rigidity.tex                    # Main manuscript (LaTeX, amsart)
-├── rigidity.pdf                    # Compiled paper
-├── RigidityProject/                # Lean 4 formalization
-│   ├── RigidityProject/
-│   │   ├── Basic.lean              # Core definitions (§2)
-│   │   ├── Axioms.lean             # Axioms (3 axioms + 1 proved theorem)
-│   │   ├── FinsuppStarProd.lean    # Multiplicative extension (proved)
-│   │   ├── MassArgument.lean       # Full support and Z = ζ (§6)
-│   │   └── Main.lean              # Complete rigidity theorem (§7)
-│   ├── lakefile.lean
-│   ├── lean-toolchain              # Lean v4.24.0
-│   └── lake-manifest.json          # Mathlib pinned at f897ebcf
-└── archive/                        # Older manuscript versions and journal materials
+├── RigidityProject/
+│   ├── Basic.lean              # Core definitions (§2)
+│   ├── Axioms.lean             # Axioms (3 axioms + 1 proved theorem)
+│   ├── FinsuppStarProd.lean    # Multiplicative extension (proved)
+│   ├── MassArgument.lean       # Full support and Z = ζ (§6)
+│   └── Main.lean               # Complete rigidity theorem (§7)
+├── lakefile.lean
+├── lean-toolchain              # Lean v4.24.0
+└── lake-manifest.json          # Mathlib pinned at f897ebcf
 ```
 
 ## Correspondence Between Paper and Formalization
@@ -102,7 +98,7 @@ The paper's proof proceeds in two stages: (1) the mass argument (Proposition 6.1
 
 - *Axiom 3 (free monoid isomorphism):* If $(\mathbb{N},\star)$ has unique factorization and infinitely many irreducibles, then $(\mathbb{N},\star) \cong (\mathbb{N},\cdot)$. This is a standard algebraic fact: ordinary primes are also countably infinite (Euclid), so any bijection of generators extends to a monoid isomorphism.
 
-## Building the Formalization
+## Building
 
 ### Prerequisites
 
@@ -112,7 +108,6 @@ The paper's proof proceeds in two stages: (1) the mass argument (Proposition 6.1
 ### Build
 
 ```bash
-cd RigidityProject
 lake build
 ```
 
@@ -121,12 +116,6 @@ The first build will download Mathlib and its dependencies (~2 GB). Subsequent b
 ### Verification
 
 A successful build produces no `sorry` warnings. The only non-`theorem` declarations are the 3 `axiom` statements in `Axioms.lean`.
-
-## Compiling the Paper
-
-```bash
-pdflatex rigidity.tex && pdflatex rigidity.tex
-```
 
 ## License
 

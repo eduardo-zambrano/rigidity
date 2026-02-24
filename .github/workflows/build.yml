@@ -3,14 +3,8 @@ name: Build
 on:
   push:
     branches: [main]
-    paths:
-      - 'RigidityProject/**'
-      - '.github/workflows/build.yml'
   pull_request:
     branches: [main]
-    paths:
-      - 'RigidityProject/**'
-      - '.github/workflows/build.yml'
 
 jobs:
   build:
@@ -24,7 +18,7 @@ jobs:
           echo "$HOME/.elan/bin" >> $GITHUB_PATH
 
       - name: Get Mathlib cache
-        run: cd RigidityProject && lake exe cache get
+        run: lake exe cache get
 
       - name: Build
-        run: cd RigidityProject && lake build
+        run: lake build
