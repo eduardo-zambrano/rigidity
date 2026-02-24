@@ -1,6 +1,8 @@
 # Characterizing Arithmetic Through Dirichlet Series with Boolean Coefficients
 
-[![Build](https://github.com/eduardo-zambrano/rigidity/actions/workflows/build.yml/badge.svg)](https://github.com/eduardo-zambrano/rigidity/actions/workflows/build.yml)
+[![Lean 4](https://img.shields.io/badge/Lean_4-v4.24.0-blue)](https://lean-lang.org/)
+[![Mathlib](https://img.shields.io/badge/Mathlib-v4.24.0-blue)](https://github.com/leanprover-community/mathlib4)
+[![Sorry count](https://img.shields.io/badge/sorry_count-0-brightgreen)]()*
 
 This repository contains the paper and a Lean 4 formalization of the main theorem from:
 
